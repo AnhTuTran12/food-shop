@@ -6,7 +6,7 @@ const Header = () => {
     <header className="header">
       <nav>
         <div className="nav_bar">
-          <img src="./public/images/icon/Bar.svg" alt="" />
+          <img src="./images/icon/Bar.svg" alt="" />
         </div>
         <ul className="nav_list">
           <li className="nav_item">
@@ -31,7 +31,7 @@ const Header = () => {
         </ul>
         <div className="phone_number">
           <img
-            src="./public/images/icon/Phone.svg"
+            src="./images/icon/Phone.svg"
             alt="Phone Icon"
             className="phone_icon"
           />
@@ -40,25 +40,23 @@ const Header = () => {
       </nav>
       <div className="top_bar">
         <div className="logo">
-          <img src="./public/images/logo.png" alt="Logo" />
+          <img src="./images/logo.png" alt="Logo" />
         </div>
         <div className="top_bar-search">
           <input type="text" name="" id="" placeholder="Search for items..." />
           <button type="submit">
-            <img src="./public/images/icon/Search.svg" alt="Search Icon" />
+            <img src="./images/icon/Search.svg" alt="Search Icon" />
           </button>
         </div>
         <div className="top_bar-icon">
           <div className="icon_account item">
-            <img src="./public/images/icon/People.svg" alt="" />{" "}
-            <span>Account</span>
+            <img src="./images/icon/People.svg" alt="" /> <span>Account</span>
           </div>
           <div className="icon_wishlist item">
-            <img src="./public/images/icon/Heart.svg" alt="" />{" "}
-            <span>Wishlist</span>
+            <img src="./images/icon/Heart.svg" alt="" /> <span>Wishlist</span>
           </div>
           <div className="icon_cart item">
-            <img src="./public/images/icon/Cart.svg" alt="" /> <span>Cart</span>
+            <img src="./images/icon/Cart.svg" alt="" /> <span>Cart</span>
           </div>
         </div>
       </div>
