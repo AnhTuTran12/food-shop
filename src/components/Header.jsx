@@ -40,7 +40,7 @@ const Header = () => {
       </nav>
       <div className="top_bar">
         <div className="logo">
-          <img src="./images/logo.png" alt="Logo" />
+          <img src="./images/Logo.png" alt="Logo" />
         </div>
         <div className="top_bar-search">
           <input type="text" name="" id="" placeholder="Search for items..." />
