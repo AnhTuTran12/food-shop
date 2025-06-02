@@ -17,14 +17,10 @@ const Home = () => {
   return (
     <>
       <section className="banner">
-        <img
-          src="./public/images/banner/Banner.png"
-          alt=""
-          className="banner_img"
-        />
+        <img src="./images/banner/Banner.png" alt="" className="banner_img" />
         <div className="banner_btn">
           <button>
-            <img src="./public/images/icon/Arrow-right.svg" alt="" />
+            <img src="./images/icon/Arrow-right.svg" alt="" />
             <span>Order Now</span>
           </button>
         </div>
@@ -37,7 +33,7 @@ const Home = () => {
         <div className="popular_categories_list">
           <div className="popular_categories_item">
             <div className="img_wapper">
-              <img src="./public/images/product/food1.png" alt="" />
+              <img src="./images/product/food1.png" alt="" />
             </div>
 
             <h3>Main Dish</h3>
@@ -45,28 +41,28 @@ const Home = () => {
           </div>
           <div className="popular_categories_item">
             <div className="img_wapper">
-              <img src="./public/images/product/food2.png" alt="" />
+              <img src="./images/product/food2.png" alt="" />
             </div>
             <h3>Break Fast</h3>
             <span>12 break fast</span>
           </div>
           <div className="popular_categories_item">
             <div className="img_wapper">
-              <img src="./public/images/product/food3.png" alt="" />
+              <img src="./images/product/food3.png" alt="" />
             </div>
             <h3>Dessert</h3>
             <span>48 dessert</span>
           </div>
           <div className="popular_categories_item">
             <div className="img_wapper">
-              <img src="./public/images/product/food4.png" alt="" />
+              <img src="./images/product/food4.png" alt="" />
             </div>
             <h3>Browse All</h3>
             <span>255 items</span>
           </div>
           <div className="popular_categories_item">
             <div className="img_wapper">
-              <img src="./public/images/product/food5.png" alt="" />
+              <img src="./images/product/food5.png" alt="" />
             </div>
             <h3>Breakfast Food</h3>
             <span>205 items</span>
@@ -92,11 +88,11 @@ const Home = () => {
         </div>
         <div className="daily_best_sells_list">
           <div className="daily_best_sells_banner">
-            <img src="./public/images/banner/banner2.png" alt="" />
+            <img src="./images/banner/banner2.png" alt="" />
             <div className="daily_best_sells_banner-btn">
               <button>
                 <span>Shop Now</span>
-                <img src="./public/images/icon/Arrow-right.svg" alt="" />
+                <img src="./images/icon/Arrow-right.svg" alt="" />
               </button>
             </div>
           </div>
@@ -106,7 +102,7 @@ const Home = () => {
               <h3>{products.productName}</h3>
               <div className="daily_best_sells_item-rating">
                 {[...Array(products.productRating)].map((_, index) => (
-                  <img src="./public/images/icon/star.svg" alt="" key={index} />
+                  <img src="./images/icon/star.svg" alt="" key={index} />
                 ))}
               </div>
               <span className="daily_best_sells_item_price">

@@ -3,7 +3,7 @@ export const products = [
     id: 1,
     productName: "All Natural Italian-Style Chicken Meatballs",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd1.png", // Updated with actual image path
+    productImage: "/images/product/prd1.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -16,7 +16,7 @@ export const products = [
     id: 2,
     productName: "Angie’s Boomchickapop Sweet and womnies",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd2.png", // Updated with actual image path
+    productImage: "/images/product/prd2.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -29,7 +29,7 @@ export const products = [
     id: 3,
     productName: "Foster Farms Takeout Crispy Classic",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd3.png", // Updated with actual image path
+    productImage: "/images/product/prd3.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -43,7 +43,7 @@ export const products = [
     productName:
       "Blue Diamond Almonds Lightly Salted All Natural Italian-Style Chicken Meatballs",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd4.png", // Updated with actual image path
+    productImage: "/images/product/prd4.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -56,7 +56,7 @@ export const products = [
     id: 5,
     productName: "Popular products 1",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd1.png", // Updated with actual image path
+    productImage: "/images/product/prd1.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -69,7 +69,7 @@ export const products = [
     id: 6,
     productName: "Popular products 2",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd2.png", // Updated with actual image path
+    productImage: "/images/product/prd2.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -82,7 +82,7 @@ export const products = [
     id: 7,
     productName: "Popular products 3",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd3.png", // Updated with actual image path
+    productImage: "/images/product/prd3.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -95,7 +95,7 @@ export const products = [
     id: 8,
     productName: "Popular products 4",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd4.png", // Updated with actual image path
+    productImage: "/images/product/prd4.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -108,7 +108,7 @@ export const products = [
     id: 9,
     productName: "New added products 1",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd1.png", // Updated with actual image path
+    productImage: "/images/product/prd1.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -121,7 +121,7 @@ export const products = [
     id: 10,
     productName: "New added products 2",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd2.png", // Updated with actual image path
+    productImage: "/images/product/prd2.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -134,7 +134,7 @@ export const products = [
     id: 11,
     productName: "New added products 3",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd3.png", // Updated with actual image path
+    productImage: "/images/product/prd3.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -147,7 +147,7 @@ export const products = [
     id: 12,
     productName: "New added products 4",
     productPrice: 238.85,
-    productImage: "/public/images/product/prd4.png", // Updated with actual image path
+    productImage: "/images/product/prd4.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
