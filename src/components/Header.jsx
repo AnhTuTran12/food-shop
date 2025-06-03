@@ -53,7 +53,8 @@ const Header = () => {
             <img src="./images/icon/People.svg" alt="" /> <span>Account</span>
           </div>
           <div className="icon_wishlist item">
-            <img src="./images/icon/Heart.svg" alt="" /> <span>Wishlist</span>
+            <img src="./images/icon/Wishlist.svg" alt="" />
+            <span>Wishlist</span>
           </div>
           <div className="icon_cart item">
             <img src="./images/icon/Cart.svg" alt="" /> <span>Cart</span>

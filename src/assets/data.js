@@ -56,7 +56,7 @@ export const products = [
     id: 5,
     productName: "Popular products 1",
     productPrice: 238.85,
-    productImage: "/images/product/prd1.png", // Updated with actual image path
+    productImage: "/images/product/prd5.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -69,7 +69,7 @@ export const products = [
     id: 6,
     productName: "Popular products 2",
     productPrice: 238.85,
-    productImage: "/images/product/prd2.png", // Updated with actual image path
+    productImage: "/images/product/prd6.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -82,7 +82,7 @@ export const products = [
     id: 7,
     productName: "Popular products 3",
     productPrice: 238.85,
-    productImage: "/images/product/prd3.png", // Updated with actual image path
+    productImage: "/images/product/prd7.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
@@ -95,7 +95,7 @@ export const products = [
     id: 8,
     productName: "Popular products 4",
     productPrice: 238.85,
-    productImage: "/images/product/prd4.png", // Updated with actual image path
+    productImage: "/images/product/prd8.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
     productCategory: "Breakfast Food",
