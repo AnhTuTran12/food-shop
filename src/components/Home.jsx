@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import "../style/Home.css"; // Import the CSS file for styling
 import { products } from "../assets/data";
 
@@ -6,6 +6,8 @@ const filterDailyBestSells = ["Featured", "Popular", "New added"];
 
 const Home = () => {
   const [activeFilter, setActiveFilter] = useState(0);
+  const [activeButton, setActiveButton] = useState("");
+  const [slideIndex, setSlideIndex] = useState(0);
 
   const filteredProducts =
     activeFilter === 0
@@ -13,6 +15,22 @@ const Home = () => {
       : products.filter(
           (item) => item.productHighlight === filterDailyBestSells[activeFilter]
         );
+
+  const slideShowCount = 3;
+
+  const prevSlide = () => {
+    setSlideIndex((prev) =>
+      prev === 0 ? products.length - slideShowCount : prev - 1
+    );
+    setActiveButton("left");
+  };
+
+  const nextSlide = () => {
+    setSlideIndex((prev) =>
+      prev === products.length - slideShowCount ? 0 : prev + 1
+    );
+    setActiveButton("right");
+  };
 
   return (
     <>
@@ -99,19 +117,95 @@ const Home = () => {
           {filteredProducts.map((products) => (
             <div className="daily_best_sells_item" key={products.id}>
               <img src={products.productImage} alt="" />
-              <h3>{products.productName}</h3>
-              <div className="daily_best_sells_item-rating">
+              <h3 className="product_name">{products.productName}</h3>
+              <div className="product_rating">
                 {[...Array(products.productRating)].map((_, index) => (
                   <img src="./images/icon/star.svg" alt="" key={index} />
                 ))}
               </div>
-              <span className="daily_best_sells_item_price">
-                ${products.productPrice}
-              </span>
+              <span className="product_price">${products.productPrice}</span>
               <p>
                 Sold: {products.productSell}/{products.productQuantity}
               </p>
               <button>Add to Cart</button>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="special_dishes">
+        <div className="special_dishes_title">
+          <span>Special Dishes</span>
+          <div className="special_dishes_title-btn">
+            <h2>Standout Dishes From Our Menu</h2>
+            <div className="special_dishes-btn">
+              <button
+                className={activeButton === "left" ? "active" : ""}
+                onClick={prevSlide}
+              >
+                <img
+                  src="./images/icon/Left.svg"
+                  alt=""
+                  className="left_icon"
+                />
+              </button>
+              <button
+                className={activeButton === "right" ? "active" : ""}
+                onClick={nextSlide}
+              >
+                <img
+                  src="./images/icon/Left.svg"
+                  alt=""
+                  className="right_icon"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="special_dishes_list ">
+          {products
+            .slice(slideIndex, slideIndex + slideShowCount)
+            .map((product) => (
+              <div className="special_dishes_item" key={product.id}>
+                <div className="wishlist_icon">
+                  <div></div>
+                </div>
+                <div className="img_wapper">
+                  <img src={product.productImage} alt="" />
+                </div>
+                <h3>{product.productName}</h3>
+                <span>{product.productDescription}</span>
+              </div>
+            ))}
+        </div>
+      </section>
+      <section className="deals">
+        <div className="deals_title">
+          <h2>Deals Of The Day</h2>
+        </div>
+        <div className="deals_list">
+          {products.slice(4, 8).map((product) => (
+            <div className="deals_item" key={product.id}>
+              <img
+                src={product.productImage}
+                alt=""
+                className="product_image"
+              />
+              <div className="deals_item_container">
+                <h3 className="product_name">{product.productName}</h3>
+                <div className="product_rating">
+                  {[...Array(product.productRating)].map((_, index) => (
+                    <img src="./images/icon/star.svg" alt="" key={index} />
+                  ))}
+                  <span>({product.productRating})</span>
+                </div>
+                <div className="deals_btn">
+                  <span className="product_price">${product.productPrice}</span>
+                  <button>
+                    <img src="./images/icon/Cart.svg" alt="" />
+                    <p>Add</p>
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
