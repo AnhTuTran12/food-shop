@@ -210,6 +210,102 @@ const Home = () => {
           ))}
         </div>
       </section>
+      <section className="faq">
+        <div className="faq_left">
+          <img src="./images/banner/banner3.png" alt="" />
+        </div>
+        <div className="faq_right">
+          <h2>Why People Choose Us?</h2>
+          <div className="faq_list">
+            <div className="faq_item">
+              <div className="faq_item_icon">
+                <img src="./images/icon/Shipper.svg" alt="" />
+              </div>
+              <div className="faq_item_text">
+                <h3>Convenient and Reliable</h3>
+                <p>
+                  Whether you dine in, take out, order delivery, our service is
+                  convenient, fast, and reliable, making mealtime hassle-free.
+                </p>
+              </div>
+            </div>
+            <div className="faq_item">
+              <div className="faq_item_icon">
+                <img src="./images/icon/Menu.svg" alt="" />
+              </div>
+              <div className="faq_item_text">
+                <h3>Variety of Options</h3>
+                <p>
+                  From hearty meals to light snacks, we offer a wide range of
+                  options to suit every taste and craving.
+                </p>
+              </div>
+            </div>
+            <div className="faq_item">
+              <div className="faq_item_icon">
+                <img src="./images/icon/Burger.svg" alt="" />
+              </div>
+              <div className="faq_item_text">
+                <h3>Eat Burger</h3>
+                <p>
+                  Our burgers are grilled to perfection, with juicy patties and
+                  flavorful toppings that make every bite a delicious
+                  experience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="essential_promo">
+        <div className="essential_promo_content">
+          <h2>Stay home & get your daily needs from our shop</h2>
+          <div className="essential_promo_inp">
+            <input type="text" placeholder="Your email address" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <img src="./images/banner/banner4.png" alt="" />
+      </section>
+      <section className="ancillary_services">
+        <div className="ancillary_services_list">
+          <div className="ancillary_services_item">
+            <img src="./images/icon/Deal.svg" alt="" />
+            <div className="ancillary_services_item_text">
+              <h3>Best prices & offers</h3>
+              <p>Orders $50 or more</p>
+            </div>
+          </div>
+          <div className="ancillary_services_item">
+            <img src="./images/icon/Cooperation.svg" alt="" />
+            <div className="ancillary_services_item_text">
+              <h3>Free delivery</h3>
+              <p>24/7 amazing services</p>
+            </div>
+          </div>
+          <div className="ancillary_services_item">
+            <img src="./images/icon/Memo-money.svg" alt="" />
+            <div className="ancillary_services_item_text">
+              <h3>Great daily deal</h3>
+              <p>When you sign up</p>
+            </div>
+          </div>
+          <div className="ancillary_services_item">
+            <img src="./images/icon/Diverse.svg" alt="" />
+            <div className="ancillary_services_item_text">
+              <h3>Wide assortment</h3>
+              <p>Mega Discounts</p>
+            </div>
+          </div>
+          <div className="ancillary_services_item">
+            <img src="./images/icon/Return-product.svg" alt="" />
+            <div className="ancillary_services_item_text">
+              <h3>Easy returns</h3>
+              <p>Within 30 days</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
