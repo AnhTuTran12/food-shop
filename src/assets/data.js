@@ -1,3 +1,30 @@
+export const category = [
+  {
+    id: 1,
+    categoryName: "Dairy & Bakery",
+  },
+  {
+    id: 2,
+    categoryName: "Fruits & Vegetable",
+  },
+  {
+    id: 3,
+    categoryName: "Snack & Spice",
+  },
+  {
+    id: 4,
+    categoryName: "Juice & Drinks",
+  },
+  {
+    id: 5,
+    categoryName: "Chicken & Meats",
+  },
+  {
+    id: 1,
+    categoryName: "Fast Food",
+  },
+];
+
 export const products = [
   {
     id: 1,
@@ -11,6 +38,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "Featured",
+    productCategory_id: 1,
   },
   {
     id: 2,
@@ -24,6 +52,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "Featured",
+    productCategory_id: 1,
   },
   {
     id: 3,
@@ -37,6 +66,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "Featured",
+    productCategory_id: 1,
   },
   {
     id: 4,
@@ -51,6 +81,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "Featured",
+    productCategory_id: 1,
   },
   {
     id: 5,
@@ -64,6 +95,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "Popular",
+    productCategory_id: 1,
   },
   {
     id: 6,
@@ -77,6 +109,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "Popular",
+    productCategory_id: 1,
   },
   {
     id: 7,
@@ -90,6 +123,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "Popular",
+    productCategory_id: 2,
   },
   {
     id: 8,
@@ -103,6 +137,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "Popular",
+    productCategory_id: 2,
   },
   {
     id: 9,
@@ -116,6 +151,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "New added",
+    productCategory_id: 2,
   },
   {
     id: 10,
@@ -129,6 +165,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "New added",
+    productCategory_id: 2,
   },
   {
     id: 11,
@@ -142,6 +179,7 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "New added",
+    productCategory_id: 2,
   },
   {
     id: 12,
@@ -155,5 +193,6 @@ export const products = [
     productSell: 90,
     productQuantity: 120,
     productHighlight: "New added",
+    productCategory_id: 2,
   },
 ];

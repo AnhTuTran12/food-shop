@@ -1,0 +1,182 @@
+import React, { useState } from "react";
+import "../style/Shop.css";
+import { category, products } from "../assets/data";
+import { Range } from "react-range";
+
+const MIN = 0;
+const MAX = 5000;
+const filterSortOption = ["All", "Featured", "Popular", "New added"];
+
+const Shop = () => {
+  const [price, setPrice] = useState([0, 5000]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [sortOption, setSortOption] = useState("All");
+
+  const productsPerPage = 9;
+  const totalPages = Math.ceil(products.length / productsPerPage);
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const currentProducts = products.slice(startIndex, endIndex);
+
+  let sortedProducts = [...currentProducts];
+  if (sortOption != filterSortOption[0]) {
+    sortedProducts = sortedProducts.filter(
+      (item) => item.productHighlight === sortOption
+    );
+  }
+
+  return (
+    <>
+      <section className="shop">
+        <div className="shop_container">
+          <div className="shop_left">
+            <div className="shop_filter_category shop_filter">
+              <h3>Product Category</h3>
+              <ul className="shop_filter_nav">
+                {category.map((item, index) => (
+                  <li key={index}>
+                    <label htmlFor={item.id} className="checkbox_label">
+                      <input type="checkbox" name="" id={item.id} />
+                      <span>{item.categoryName}</span>
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="shop_filter_price shop_filter">
+              <h3>Filter By Price</h3>
+              <div className="custom_range">
+                <Range
+                  step={1}
+                  min={MIN}
+                  max={MAX}
+                  values={price}
+                  onChange={setPrice}
+                  renderTrack={({ props, children }) => {
+                    const { min, max } = props;
+                    const left = ((price[0] - MIN) / (MAX - MIN)) * 100;
+                    const right = ((price[1] - MIN) / (MAX - MIN)) * 100;
+                    return (
+                      <div {...props} className="custom_range_track">
+                        <div
+                          className="custom_range_track_selected"
+                          style={{
+                            left: `${left}%`,
+                            width: `${right - left}%`,
+                          }}
+                        />
+                        {children}
+                      </div>
+                    );
+                  }}
+                  renderThumb={({ props }) => (
+                    <div {...props} className="custom_range_thumb"></div>
+                  )}
+                ></Range>
+                <div className="custom_range_value">
+                  <span>Price:</span>
+                  <b>
+                    {price[0]} - {price[1]}
+                  </b>
+                </div>
+              </div>
+              <div className="shop_filter_price_btn">
+                <button>Filter</button>
+              </div>
+            </div>
+            <div className="shop_filter_weight shop_filter">
+              <h3>Weight</h3>
+              <ul className="shop_filter_nav">
+                <li>
+                  <label className="checkbox_label">
+                    <input type="checkbox" name="" id="" />
+                    <span>2kg Pack</span>
+                  </label>
+                </li>
+                <li>
+                  <label className="checkbox_label">
+                    <input type="checkbox" name="" id="" />
+                    <span>20kg Pack</span>
+                  </label>
+                </li>
+                <li>
+                  <label className="checkbox_label">
+                    <input type="checkbox" name="" id="" />
+                    <span>30kg Pack</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="shop_right">
+            <div className="shop_list">
+              <div className="shop_list_sort">
+                <div>
+                  <span>Sort by: </span>
+                  <select
+                    value={sortOption}
+                    onChange={(e) => setSortOption(e.target.value)}
+                    className="shop_sort_select"
+                  >
+                    {filterSortOption.map((option, index) => (
+                      <option value={option} key={index}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              <div className="shop_list_container">
+                {sortedProducts.slice(0, 9).map((product, index) => (
+                  <div className="shop_item" key={index}>
+                    <img
+                      src={product.productImage}
+                      alt=""
+                      className="product_image"
+                    />
+                    <div className="product_category">
+                      {category[product.productCategory_id].categoryName}
+                    </div>
+                    <div className="product_rating">
+                      {[...Array(product.productRating)].map((_, index) => (
+                        <img src="/images/icon/star.svg" alt="" key={index} />
+                      ))}
+                      <span>{product.productRating}</span>
+                    </div>
+                    <p className="product_name">{product.productName}</p>
+                    <p className="product_price">${product.productPrice}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="pagination">
+              <button onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}>
+                Previous
+              </button>
+
+              {[...Array(totalPages)].map((_, index) => (
+                <button
+                  key={index}
+                  className={currentPage === index + 1 ? "active" : ""}
+                  onClick={() => setCurrentPage(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              ))}
+              <button
+                onClick={() =>
+                  setCurrentPage((p) => Math.min(p + 1, totalPages))
+                }
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Shop;
