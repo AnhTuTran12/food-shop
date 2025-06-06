@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/Header.css"; // Import the CSS file for styling
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -16,7 +17,7 @@ const Header = () => {
             <a href="">Category</a>
           </li>
           <li className="nav_item">
-            <a href="">Product</a>
+            <Link to="/shop">Product</Link>
           </li>
 
           <li className="nav_item">
