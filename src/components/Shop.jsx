@@ -53,11 +53,12 @@ const Shop = () => {
                   values={price}
                   onChange={setPrice}
                   renderTrack={({ props, children }) => {
+                    const { key, ...rest } = props;
                     const { min, max } = props;
                     const left = ((price[0] - MIN) / (MAX - MIN)) * 100;
                     const right = ((price[1] - MIN) / (MAX - MIN)) * 100;
                     return (
-                      <div {...props} className="custom_range_track">
+                      <div key={key} {...rest} className="custom_range_track">
                         <div
                           className="custom_range_track_selected"
                           style={{
@@ -69,9 +70,16 @@ const Shop = () => {
                       </div>
                     );
                   }}
-                  renderThumb={({ props }) => (
-                    <div {...props} className="custom_range_thumb"></div>
-                  )}
+                  renderThumb={({ props }) => {
+                    const { key, ...rest } = props;
+                    return (
+                      <div
+                        key={key}
+                        {...rest}
+                        className="custom_range_thumb"
+                      ></div>
+                    );
+                  }}
                 ></Range>
                 <div className="custom_range_value">
                   <span>Price:</span>
