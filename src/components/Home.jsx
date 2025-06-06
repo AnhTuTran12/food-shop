@@ -127,7 +127,7 @@ const Home = () => {
               <p>
                 Sold: {products.productSell}/{products.productQuantity}
               </p>
-              <button>Add to Cart</button>
+              <button className="product_btn_buy">Add to Cart</button>
             </div>
           ))}
         </div>

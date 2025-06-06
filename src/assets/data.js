@@ -1,26 +1,26 @@
 export const category = [
   {
-    id: 1,
+    id: 0,
     categoryName: "Dairy & Bakery",
   },
   {
-    id: 2,
+    id: 1,
     categoryName: "Fruits & Vegetable",
   },
   {
-    id: 3,
+    id: 2,
     categoryName: "Snack & Spice",
   },
   {
-    id: 4,
+    id: 3,
     categoryName: "Juice & Drinks",
   },
   {
-    id: 5,
+    id: 4,
     categoryName: "Chicken & Meats",
   },
   {
-    id: 1,
+    id: 5,
     categoryName: "Fast Food",
   },
 ];
@@ -39,11 +39,23 @@ export const products = [
     productQuantity: 120,
     productHighlight: "Featured",
     productCategory_id: 1,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 2,
     productName: "Angie’s Boomchickapop Sweet and womnies",
-    productPrice: 238.85,
+    productPrice: 338.85,
     productImage: "/images/product/prd2.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
@@ -53,11 +65,23 @@ export const products = [
     productQuantity: 120,
     productHighlight: "Featured",
     productCategory_id: 1,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 3,
     productName: "Foster Farms Takeout Crispy Classic",
-    productPrice: 238.85,
+    productPrice: 438.85,
     productImage: "/images/product/prd3.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
@@ -67,12 +91,24 @@ export const products = [
     productQuantity: 120,
     productHighlight: "Featured",
     productCategory_id: 1,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 4,
     productName:
       "Blue Diamond Almonds Lightly Salted All Natural Italian-Style Chicken Meatballs",
-    productPrice: 238.85,
+    productPrice: 538.85,
     productImage: "/images/product/prd4.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
@@ -82,11 +118,23 @@ export const products = [
     productQuantity: 120,
     productHighlight: "Featured",
     productCategory_id: 1,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 5,
     productName: "Popular products 1",
-    productPrice: 238.85,
+    productPrice: 638.85,
     productImage: "/images/product/prd5.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
@@ -96,11 +144,23 @@ export const products = [
     productQuantity: 120,
     productHighlight: "Popular",
     productCategory_id: 1,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 6,
     productName: "Popular products 2",
-    productPrice: 238.85,
+    productPrice: 738.85,
     productImage: "/images/product/prd6.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
@@ -110,11 +170,23 @@ export const products = [
     productQuantity: 120,
     productHighlight: "Popular",
     productCategory_id: 1,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 7,
     productName: "Popular products 3",
-    productPrice: 238.85,
+    productPrice: 838.85,
     productImage: "/images/product/prd7.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
@@ -124,11 +196,23 @@ export const products = [
     productQuantity: 120,
     productHighlight: "Popular",
     productCategory_id: 2,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 8,
     productName: "Popular products 4",
-    productPrice: 238.85,
+    productPrice: 938.85,
     productImage: "/images/product/prd8.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
@@ -138,11 +222,23 @@ export const products = [
     productQuantity: 120,
     productHighlight: "Popular",
     productCategory_id: 2,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 9,
     productName: "New added products 1",
-    productPrice: 238.85,
+    productPrice: 1038.85,
     productImage: "/images/product/prd1.png", // Updated with actual image path
     productDescription:
       "All Natural Italian-Style Chicken Meatballs are made with 100% natural ingredients, offering a delicious and healthy option for your meals. Perfect for pasta dishes, sandwiches, or as a snack.",
@@ -152,6 +248,18 @@ export const products = [
     productQuantity: 120,
     productHighlight: "New added",
     productCategory_id: 2,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 10,
@@ -166,6 +274,18 @@ export const products = [
     productQuantity: 120,
     productHighlight: "New added",
     productCategory_id: 2,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 11,
@@ -180,6 +300,18 @@ export const products = [
     productQuantity: 120,
     productHighlight: "New added",
     productCategory_id: 2,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
   {
     id: 12,
@@ -194,5 +326,17 @@ export const products = [
     productQuantity: 120,
     productHighlight: "New added",
     productCategory_id: 2,
+    productAlbum: [
+      "/images/product/prd1.png",
+      "/images/product/prd2.png",
+      "/images/product/prd3.png",
+      "/images/product/prd4.png",
+    ],
+    productBrand: "ESTA BETTERU CO",
+    productFlavour: "Super Saver Pack",
+    productDietType: "Vegetarian",
+    productWeight: "200 Grams",
+    productSpeciality: "Gluten Free, Sugar Free",
+    productInfo: "Egg Free, Allergen-Free",
   },
 ];
