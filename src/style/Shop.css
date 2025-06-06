@@ -258,3 +258,11 @@
 .shop_list_sort .shop_sort_select:focus {
     border-color: var(--green);
 }
+
+.notification_shop {
+    width: 100%;
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #7A7A7A;
+    margin: 20px 0 10px 0;
+}

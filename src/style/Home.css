@@ -152,7 +152,7 @@
     left: 50px;
 }
 
-.daily_best_sells_banner-btn button {
+.product_btn_buy {
     background-color: var(--red);
     color: var(--white);
     border-radius: 5px;
@@ -355,7 +355,7 @@
 
 }
 
-.special_dishes_item .wishlist_icon div {
+.wishlist_icon div {
     width: 20px;
     height: 20px;
     filter: brightness(0) invert(1);
@@ -365,7 +365,7 @@
     background-position: center;
 }
 
-.special_dishes_item .wishlist_icon:hover div {
+.wishlist_icon:hover div {
     width: 20px;
     height: 20px;
     background-image: url('/images/icon/Heart-active.svg');
@@ -455,6 +455,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .deals_item_container .deals_btn button {
