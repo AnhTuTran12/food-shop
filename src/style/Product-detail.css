@@ -29,12 +29,11 @@
 .product_detail_container .product_image .product_album {
     display: flex;
     gap: 20px;
-    /* justify-content: space-evenly; */
 }
 
 .product_detail_container .product_image .product_album img {
-    width: 85px;
-    height: 85px;
+    max-width: 85px;
+    max-height: 85px;
     border: 1px solid #e2e2e2;
     border-radius: 5px;
     cursor: pointer;
