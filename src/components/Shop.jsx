@@ -3,7 +3,7 @@ import "../style/Shop.css";
 import { category, products } from "../assets/data";
 import { Range } from "react-range";
 import ProductDetail from "./Product-detail";
-import { Navigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const MIN = 0;
 const MAX = 5000;
