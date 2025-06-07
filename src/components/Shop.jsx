@@ -18,6 +18,7 @@ const Shop = () => {
   const [hideSideBar, setHideSideBar] = useState(true);
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   let sortedProducts = [...products];
 
