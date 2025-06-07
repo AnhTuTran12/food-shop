@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../style/Shop.css";
 import { category, products } from "../assets/data";
 import { Range } from "react-range";
 import ProductDetail from "./Product-detail";
+import { useParams } from "react-router-dom";
 
 const MIN = 0;
 const MAX = 5000;
@@ -14,6 +15,9 @@ const Shop = () => {
   const [sortOption, setSortOption] = useState("All");
   const [filterCateogy, setFilterCategory] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [hideSideBar, setHideSideBar] = useState(false);
+
+  const { id } = useParams();
 
   let sortedProducts = [...products];
 
@@ -35,17 +39,40 @@ const Shop = () => {
     );
   }
 
-  const productsPerPage = 9;
+  let productsPerPage = Number;
+  if (hideSideBar === true) {
+    productsPerPage = 9;
+  } else {
+    productsPerPage = 12;
+  }
+
   const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
   const currentProducts = sortedProducts.slice(startIndex, endIndex);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filterCateogy, price, sortOption]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (id) {
+      const found = products.find((item) => item.id === Number(id));
+      setSelectedProduct(found || null);
+    }
+  }, [id]);
+
   return (
     <>
       <section className="shop">
-        <div className="shop_container">
-          <div className="shop_left">
+        <div
+          className={
+            "shop_container" +
+            (hideSideBar === true ? "" : "shop_container_row")
+          }
+        >
+          <div className={"shop_left" + (hideSideBar === true ? "" : " hide")}>
             <div className="shop_filter_category shop_filter">
               <h3>Product Category</h3>
               <ul className="shop_filter_nav">
@@ -147,32 +174,47 @@ const Shop = () => {
             </div>
           </div>
           <div className="shop_right">
-            <div className="shop_list">
-              <div className="shop_list_sort">
-                <div>
-                  <span>Sort by: </span>
-                  <select
-                    value={sortOption}
-                    onChange={(e) => setSortOption(e.target.value)}
-                    className="shop_sort_select"
+            {selectedProduct ? (
+              <ProductDetail
+                product={selectedProduct}
+                category={category}
+                products={products}
+                onBack={() => setSelectedProduct(null)}
+                setSelectedProduct={setSelectedProduct}
+              />
+            ) : (
+              <>
+                <div className="shop_list">
+                  <div className="shop_list_sort">
+                    <div
+                      className={
+                        "img_wapper" + (hideSideBar === false ? "" : " active")
+                      }
+                      onClick={() => setHideSideBar(!hideSideBar)}
+                    >
+                      <img src="/images/icon/Filter.svg" alt="" />
+                    </div>
+                    <div>
+                      <span>Sort by: </span>
+                      <select
+                        value={sortOption}
+                        onChange={(e) => setSortOption(e.target.value)}
+                        className="shop_sort_select"
+                      >
+                        {filterSortOption.map((option, index) => (
+                          <option value={option} key={index}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      "shop_list_container" +
+                      (hideSideBar === true ? "" : " shop_list_container-col")
+                    }
                   >
-                    {filterSortOption.map((option, index) => (
-                      <option value={option} key={index}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              {selectedProduct ? (
-                <ProductDetail
-                  product={selectedProduct}
-                  category={category}
-                  onBack={() => setSelectedProduct(null)}
-                />
-              ) : (
-                <>
-                  <div className="shop_list_container">
                     {currentProducts.length > 0 ? (
                       currentProducts.map((product, index) => (
                         <div
@@ -235,9 +277,9 @@ const Shop = () => {
                       Next
                     </button>
                   </div>
-                </>
-              )}
-            </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
