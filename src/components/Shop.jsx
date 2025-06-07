@@ -182,7 +182,7 @@ const Shop = () => {
                 product={selectedProduct}
                 category={category}
                 products={products}
-                onBack={() => navigate(-1)}
+                onBack={() => navigate("/shop")}
                 setSelectedProduct={setSelectedProduct}
               />
             ) : (
@@ -223,7 +223,7 @@ const Shop = () => {
                         <div
                           className="shop_item"
                           key={index}
-                          onClick={() => setSelectedProduct(product)}
+                          onClick={() => navigate(`/shop/${product.id}`)}
                         >
                           <img
                             src={product.productImage}
