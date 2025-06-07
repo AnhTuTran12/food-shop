@@ -20,7 +20,7 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.product_detail_container .product_image img {
+.product_detail_container .product_image .main_image_product {
     width: 100%;
     min-height: 370px;
     object-fit: cover;

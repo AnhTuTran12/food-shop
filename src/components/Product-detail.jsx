@@ -44,7 +44,7 @@ const ProductDetail = ({
         </button>
         <div className="product_detail_container">
           <div className="product_image">
-            <img src={mainImage} alt="" />
+            <img src={mainImage} alt="" className="main_image_product" />
             <div
               className="product_album"
               onMouseLeave={() => setMainImage(product.productImage)}
