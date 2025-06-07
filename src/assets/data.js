@@ -116,7 +116,7 @@ export const products = [
     productRating: 4,
     productSell: 90,
     productQuantity: 120,
-    productHighlight: "Featured",
+    productHighlight: "Popular",
     productCategory_id: 1,
     productAlbum: [
       "/images/product/prd1.png",
