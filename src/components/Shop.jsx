@@ -182,7 +182,7 @@ const Shop = () => {
                 product={selectedProduct}
                 category={category}
                 products={products}
-                onBack={() => navigate("/shop")}
+                onBack={() => navigate("shop")}
                 setSelectedProduct={setSelectedProduct}
               />
             ) : (
