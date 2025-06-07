@@ -3,7 +3,7 @@ import "../style/Shop.css";
 import { category, products } from "../assets/data";
 import { Range } from "react-range";
 import ProductDetail from "./Product-detail";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 const MIN = 0;
 const MAX = 5000;
@@ -15,7 +15,7 @@ const Shop = () => {
   const [sortOption, setSortOption] = useState("All");
   const [filterCateogy, setFilterCategory] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [hideSideBar, setHideSideBar] = useState(false);
+  const [hideSideBar, setHideSideBar] = useState(true);
 
   const { id } = useParams();
 
@@ -60,6 +60,8 @@ const Shop = () => {
     if (id) {
       const found = products.find((item) => item.id === Number(id));
       setSelectedProduct(found || null);
+    } else {
+      setSelectedProduct(null);
     }
   }, [id]);
 
@@ -179,7 +181,7 @@ const Shop = () => {
                 product={selectedProduct}
                 category={category}
                 products={products}
-                onBack={() => setSelectedProduct(null)}
+                onBack={() => Navigate("/shop")}
                 setSelectedProduct={setSelectedProduct}
               />
             ) : (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "../style/Product-detail.css";
+import { useParams } from "react-router-dom";
 
 const ProductDetail = ({
   product,
@@ -13,6 +14,7 @@ const ProductDetail = ({
 
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(product.productImage);
+
   const handleDecrease = () => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
   };
