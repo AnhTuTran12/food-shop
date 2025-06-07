@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import "../style/Product-detail.css";
-import { useParams } from "react-router-dom";
 
 const ProductDetail = ({
   product,

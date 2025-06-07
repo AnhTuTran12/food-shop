@@ -181,7 +181,7 @@ const Shop = () => {
                 product={selectedProduct}
                 category={category}
                 products={products}
-                onBack={() => Navigate("/shop")}
+                onBack={() => navigate("/shop")}
                 setSelectedProduct={setSelectedProduct}
               />
             ) : (

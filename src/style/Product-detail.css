@@ -24,6 +24,8 @@
     width: 100%;
     min-height: 370px;
     object-fit: cover;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
 }
 
 .product_detail_container .product_image .product_album {
