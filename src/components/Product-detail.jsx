@@ -30,6 +30,19 @@ const ProductDetail = ({
     (item) => item.productHighlight === "Popular" && item.id !== product.id
   );
 
+  const handleAddToCart = (product) => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const exist = cart.find((item) => item.id === product.id);
+
+    if (exist) {
+      exist.quantity += quantity;
+    } else {
+      cart.push({ ...product, quantity: quantity });
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Added to cart");
+  };
+
   useEffect(() => {
     setQuantity(1);
     setMainImage(product.productImage);
@@ -149,7 +162,12 @@ const ProductDetail = ({
                   </button>
                 </div>
               </div>
-              <div className="product_btn_buy"> Add To Cart</div>
+              <div
+                className="product_btn_buy"
+                onClick={() => handleAddToCart(product)}
+              >
+                Add To Cart
+              </div>
               <div className="wishlist_icon">
                 <div></div>
               </div>

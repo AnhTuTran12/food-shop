@@ -1,8 +1,9 @@
 import React from "react";
 import "../style/Header.css"; // Import the CSS file for styling
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <header className="header">
       <nav>
@@ -50,7 +51,7 @@ const Header = () => {
           </button>
         </div>
         <div className="top_bar-icon">
-          <div className="icon_account item">
+          <div className="icon_account item" onClick={() => navigate(`/login`)}>
             <img src="/images/icon/People.svg" alt="" /> <span>Account</span>
           </div>
           <div className="icon_wishlist item">

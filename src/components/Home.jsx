@@ -35,6 +35,20 @@ const Home = () => {
     setActiveButton("right");
   };
 
+  const handleAddToCart = (product) => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+    const exist = cart.find((item) => item.id === product.id);
+
+    if (exist) {
+      exist.quantity += 1;
+    } else {
+      cart.push({ ...product, quantity: 1 });
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Added to cart");
+  };
+
   return (
     <>
       <section className="banner">
@@ -138,7 +152,15 @@ const Home = () => {
               <p>
                 Sold: {product.productSell}/{product.productQuantity}
               </p>
-              <button className="product_btn_buy">Add to Cart</button>
+              <button
+                className="product_btn_buy"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleAddToCart(product);
+                }}
+              >
+                Add to Cart
+              </button>
             </div>
           ))}
         </div>
@@ -221,7 +243,14 @@ const Home = () => {
                   <span className="product_price">${product.productPrice}</span>
                   <button>
                     <img src="./images/icon/Cart.svg" alt="" />
-                    <p>Add</p>
+                    <p
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleAddToCart(product);
+                      }}
+                    >
+                      Add
+                    </p>
                   </button>
                 </div>
               </div>
