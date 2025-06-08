@@ -186,7 +186,7 @@
 
 .popular_product {
     position: relative;
-    left: 50%;
+    left: 34%;
     transform: translateX(-50%);
     width: 90vw;
 }
