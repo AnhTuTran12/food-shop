@@ -13,6 +13,7 @@ const ProductDetail = ({
 
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(product.productImage);
+
   const handleDecrease = () => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
   };
@@ -29,6 +30,19 @@ const ProductDetail = ({
     (item) => item.productHighlight === "Popular" && item.id !== product.id
   );
 
+  const handleAddToCart = (product) => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const exist = cart.find((item) => item.id === product.id);
+
+    if (exist) {
+      exist.quantity += quantity;
+    } else {
+      cart.push({ ...product, quantity: quantity });
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Added to cart");
+  };
+
   useEffect(() => {
     setQuantity(1);
     setMainImage(product.productImage);
@@ -42,7 +56,7 @@ const ProductDetail = ({
         </button>
         <div className="product_detail_container">
           <div className="product_image">
-            <img src={mainImage} alt="" />
+            <img src={mainImage} alt="" className="main_image_product" />
             <div
               className="product_album"
               onMouseLeave={() => setMainImage(product.productImage)}
@@ -148,7 +162,12 @@ const ProductDetail = ({
                   </button>
                 </div>
               </div>
-              <div className="product_btn_buy"> Add To Cart</div>
+              <div
+                className="product_btn_buy"
+                onClick={() => handleAddToCart(product)}
+              >
+                Add To Cart
+              </div>
               <div className="wishlist_icon">
                 <div></div>
               </div>

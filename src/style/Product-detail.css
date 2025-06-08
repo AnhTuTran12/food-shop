@@ -20,21 +20,22 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.product_detail_container .product_image img {
+.product_detail_container .product_image .main_image_product {
     width: 100%;
-    height: 370px;
+    min-height: 370px;
     object-fit: cover;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
 }
 
 .product_detail_container .product_image .product_album {
     display: flex;
     gap: 20px;
-    /* justify-content: space-evenly; */
 }
 
 .product_detail_container .product_image .product_album img {
-    width: 85px;
-    height: 85px;
+    max-width: 85px;
+    max-height: 85px;
     border: 1px solid #e2e2e2;
     border-radius: 5px;
     cursor: pointer;
@@ -94,18 +95,18 @@
     width: 100px;
 }
 
-.product_detail_content .product_toggle {
+.product_toggle {
     display: flex;
     align-items: center;
     column-gap: 10px;
 }
 
-.product_detail_content .product_toggle .product_quantity_select {
+.product_toggle .product_quantity_select {
     display: flex;
     column-gap: 5px;
 }
 
-.product_detail_content .product_toggle .product_quantity_select input {
+.product_toggle .product_quantity_select input {
     width: 40px;
     height: 40px;
     text-align: center;
@@ -115,13 +116,13 @@
 }
 
 
-.product_detail_content .product_toggle .product_quantity_select-btn {
+.product_toggle .product_quantity_select-btn {
     display: flex;
     flex-direction: column;
     row-gap: 5px;
 }
 
-.product_detail_content .product_toggle .product_quantity_select-btn button {
+.product_toggle .product_quantity_select-btn button {
     width: 18px;
     height: 18px;
     background: var(--white);
@@ -131,7 +132,7 @@
     text-align: center;
 }
 
-.product_detail_content .product_toggle .product_quantity_select-btn button:hover {
+.product_toggle .product_quantity_select-btn button:hover {
     background: #e0e0e0;
 }
 
@@ -185,9 +186,9 @@
 
 .popular_product {
     position: relative;
-    left: 33%;
+    left: 34%;
     transform: translateX(-50%);
-    width: 90vw;
+    width: 80vw;
 }
 
 .popular_product_title {

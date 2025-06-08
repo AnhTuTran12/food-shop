@@ -3,7 +3,7 @@ import "../style/Shop.css";
 import { category, products } from "../assets/data";
 import { Range } from "react-range";
 import ProductDetail from "./Product-detail";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const MIN = 0;
 const MAX = 5000;
@@ -15,9 +15,10 @@ const Shop = () => {
   const [sortOption, setSortOption] = useState("All");
   const [filterCateogy, setFilterCategory] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [hideSideBar, setHideSideBar] = useState(false);
+  const [hideSideBar, setHideSideBar] = useState(true);
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   let sortedProducts = [...products];
 
@@ -60,6 +61,8 @@ const Shop = () => {
     if (id) {
       const found = products.find((item) => item.id === Number(id));
       setSelectedProduct(found || null);
+    } else {
+      setSelectedProduct(null);
     }
   }, [id]);
 
@@ -179,7 +182,7 @@ const Shop = () => {
                 product={selectedProduct}
                 category={category}
                 products={products}
-                onBack={() => setSelectedProduct(null)}
+                onBack={() => navigate("/shop")}
                 setSelectedProduct={setSelectedProduct}
               />
             ) : (
@@ -220,7 +223,7 @@ const Shop = () => {
                         <div
                           className="shop_item"
                           key={index}
-                          onClick={() => setSelectedProduct(product)}
+                          onClick={() => navigate(`/shop/${product.id}`)}
                         >
                           <img
                             src={product.productImage}
