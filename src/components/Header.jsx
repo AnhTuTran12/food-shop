@@ -59,7 +59,12 @@ const Header = () => {
             <span>Wishlist</span>
           </div>
           <div className="icon_cart item">
-            <img src="/images/icon/Cart.svg" alt="" /> <span>Cart</span>
+            <img
+              src="/images/icon/Cart.svg"
+              alt=""
+              onClick={() => navigate(`/cart`)}
+            />{" "}
+            <span>Cart</span>
           </div>
         </div>
       </div>
