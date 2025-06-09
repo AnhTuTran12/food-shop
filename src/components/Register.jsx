@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style/Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    password: "",
+  });
+
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
+    if (users.some((u) => u.email === form.email)) {
+      alert("Email already exists!");
+      return;
+    }
+    users.push(form);
+    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("currentUser", JSON.stringify({ email: form.email }));
+    alert("Register success!");
+    navigate("/");
+  };
+
   return (
     <>
       <div className="register">
@@ -15,8 +43,9 @@ const Register = () => {
               <span>Fist Name*</span>
               <input
                 type="text"
-                name=""
-                id=""
+                name="firstName"
+                value={form.firstName}
+                onChange={handleChange}
                 placeholder="Enter Your First Name"
                 required
               />
@@ -25,8 +54,9 @@ const Register = () => {
               <span>Last Name*</span>
               <input
                 type="text"
-                name=""
-                id=""
+                name="lastName"
+                value={form.lastName}
+                onChange={handleChange}
                 required
                 placeholder="Enter Your Last Name"
               />
@@ -37,8 +67,9 @@ const Register = () => {
               <span>Email*</span>
               <input
                 type="email"
-                name=""
-                id=""
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 required
                 placeholder="Enter Your Email"
               />
@@ -47,8 +78,9 @@ const Register = () => {
               <span>Phone Number*</span>
               <input
                 type="number"
-                name=""
-                id=""
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
                 required
                 placeholder="Enter Your Phone Number"
               />
@@ -59,8 +91,9 @@ const Register = () => {
               <span>Password*</span>
               <input
                 type="password"
-                name=""
-                id=""
+                name="password"
+                value={form.value}
+                onChange={handleChange}
                 required
                 placeholder="Enter Your Password"
               />

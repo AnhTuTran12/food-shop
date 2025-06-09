@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../style/Shop.css";
-import { category, products } from "../assets/data";
 import { Range } from "react-range";
 import ProductDetail from "./Product-detail";
 import { useNavigate, useParams } from "react-router-dom";
+import { ProductContext } from "../context/ProductContext";
+import { CategoryContext } from "../context/CategoryContext";
 
 const MIN = 0;
 const MAX = 5000;
 const filterSortOption = ["All", "Featured", "Popular", "New added"];
 
 const Shop = () => {
+  const { products } = useContext(ProductContext);
+  const { category } = useContext(CategoryContext);
   const [price, setPrice] = useState([0, 5000]);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOption, setSortOption] = useState("All");
