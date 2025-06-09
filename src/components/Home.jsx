@@ -1,11 +1,12 @@
-import React, { use, useState } from "react";
+import React, { use, useContext, useEffect, useState } from "react";
 import "../style/Home.css"; // Import the CSS file for styling
-import { products } from "../assets/data";
 import { useNavigate } from "react-router-dom";
+import { ProductContext } from "../context/ProductContext";
 
 const filterDailyBestSells = ["Featured", "Popular", "New added"];
 
 const Home = () => {
+  const { products } = useContext(ProductContext);
   const [activeFilter, setActiveFilter] = useState(0);
   const [activeButton, setActiveButton] = useState("");
   const [slideIndex, setSlideIndex] = useState(0);
