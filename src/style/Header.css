@@ -106,3 +106,43 @@ nav::after {
 .top_bar-icon .item {
     gap: 5px;
 }
+
+.top_bar-icon .icon_account {
+    position: relative;
+    /* padding-bottom: 60px; */
+}
+
+.top_bar-icon .icon_account .account_dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 100px;
+    background-color: var(--white);
+    border-radius: 5px;
+    z-index: 100;
+    padding: 10;
+    margin: 0;
+    list-style: none;
+}
+
+.top_bar-icon .icon_account .account_dropdown li a {
+    display: block;
+    padding: 10px 16px;
+    color: #333333;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.top_bar-icon .icon_account .account_dropdown li p {
+    display: block;
+    padding: 10px 16px;
+    color: #333333;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.icon_account:hover .account_dropdown,
+.icon_account .account_dropdown:hover {
+    display: block;
+}

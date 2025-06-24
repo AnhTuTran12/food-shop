@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "../style/Header.css"; // Import the CSS file for styling
 import { Link, useNavigate } from "react-router-dom";
+import { deleteCookie, getCookie } from "../utils/cookie";
+import { UserContext } from "../context/UserContext";
 
 const Header = () => {
+  const { logout } = useContext(UserContext);
   const navigate = useNavigate();
+
+  const isLoggedIn = !!getCookie("currentUser");
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <header className="header">
       <nav>
@@ -51,8 +62,30 @@ const Header = () => {
           </button>
         </div>
         <div className="top_bar-icon">
-          <div className="icon_account item" onClick={() => navigate(`/login`)}>
-            <img src="/images/icon/People.svg" alt="" /> <span>Account</span>
+          <div className="icon_account item">
+            <img src="/images/icon/People.svg" alt="" />
+            <span>Account</span>
+            <ul className="account_dropdown">
+              {isLoggedIn ? (
+                <>
+                  <li>
+                    <Link to="">Profile</Link>
+                  </li>
+                  <li>
+                    <p onClick={handleLogout}>Logout</p>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link to="/login">Login</Link>
+                  </li>
+                  <li>
+                    <Link to="/register">Register</Link>
+                  </li>
+                </>
+              )}
+            </ul>
           </div>
           <div className="icon_wishlist item">
             <img src="/images/icon/Wishlist.svg" alt="" />

@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import "../style/Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
+import { setCookie } from "../utils/cookie";
 
 const Login = () => {
-  const { users } = useContext(UserContext);
+  const { login } = useContext(UserContext);
   const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
@@ -15,23 +16,15 @@ const Login = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(users);
-
-    const user = users.find(
-      (u) => u.email === form.email && u.password === form.password
-    );
-    if (user) {
-      localStorage.setItem(
-        "currentUser",
-        JSON.stringify({ email: user.email })
-      );
-      alert("Email or Password correct");
-
+    const success = await login(form.email, form.password);
+    if (success) {
+      alert("Login success!");
       navigate("/");
     } else {
-      alert("Email or Password Incorrect");
+      alert("Email or password incorrect");
+      console.log(success);
     }
   };
 
