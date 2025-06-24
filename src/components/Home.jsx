@@ -242,16 +242,14 @@ const Home = () => {
                 </div>
                 <div className="deals_btn">
                   <span className="product_price">${product.productPrice}</span>
-                  <button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleAddToCart(product);
+                    }}
+                  >
                     <img src="./images/icon/Cart.svg" alt="" />
-                    <p
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleAddToCart(product);
-                      }}
-                    >
-                      Add
-                    </p>
+                    <p>Add</p>
                   </button>
                 </div>
               </div>

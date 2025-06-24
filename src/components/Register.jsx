@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../style/Register.css";
 import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 const Register = () => {
+  const { register } = useContext(UserContext);
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -19,16 +21,14 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const users = JSON.parse(localStorage.getItem("users") || "[]");
-    if (users.some((u) => u.email === form.email)) {
-      alert("Email already exists!");
-      return;
+    console.log(form);
+    try {
+      await register(form);
+      alert("Register Success!");
+      navigate("/");
+    } catch (err) {
+      alert(err.message);
     }
-    users.push(form);
-    localStorage.setItem("users", JSON.stringify(users));
-    localStorage.setItem("currentUser", JSON.stringify({ email: form.email }));
-    alert("Register success!");
-    navigate("/");
   };
 
   return (
@@ -37,7 +37,7 @@ const Register = () => {
         <div className="logo">
           <img src="./images/Logo2.png" alt="" />
         </div>
-        <form action="" className="form_register">
+        <form action="" className="form_register" onSubmit={handleSubmit}>
           <div className="form_register_row-1 form_register_row">
             <label htmlFor="">
               <span>Fist Name*</span>
